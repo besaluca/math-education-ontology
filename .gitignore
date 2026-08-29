@@ -1,0 +1,17 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+
+# Environment variables / secrets
+.env
+
+# Temporary / backup files
+index_varianta buna intermediara.html
+
+# OS generated files
+.DS_Store
+Thumbs.db

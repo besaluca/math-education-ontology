@@ -1,0 +1,2267 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/iobag/ontologies/2026/7/untitled-ontology-4/"
+     xml:base="http://www.semanticweb.org/iobag/ontologies/2026/7/untitled-ontology-4/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:math-education-ontology="https://w3id.org/math-education-ontology#">
+    <owl:Ontology rdf:about="https://w3id.org/math-education-ontology">
+        <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#belongsToGrade -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/math-education-ontology#belongsToGrade">
+        <owl:inverseOf rdf:resource="https://w3id.org/math-education-ontology#hasCurriculumUnit"/>
+        <rdfs:domain rdf:resource="https://w3id.org/math-education-ontology#CurriculumUnit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#containsConcept -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/math-education-ontology#containsConcept">
+        <rdfs:domain rdf:resource="https://w3id.org/math-education-ontology#CurriculumUnit"/>
+        <rdfs:range rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#developsCompetency -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/math-education-ontology#developsCompetency">
+        <rdfs:domain rdf:resource="https://w3id.org/math-education-ontology#CurriculumUnit"/>
+        <rdfs:range rdf:resource="https://w3id.org/math-education-ontology#MathematicalCompetency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#hasCurriculumUnit -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/math-education-ontology#hasCurriculumUnit">
+        <rdfs:domain rdf:resource="https://w3id.org/math-education-ontology#GradeLevel"/>
+        <rdfs:range rdf:resource="https://w3id.org/math-education-ontology#CurriculumUnit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#hasLesson -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/math-education-ontology#hasLesson">
+        <owl:inverseOf rdf:resource="https://w3id.org/math-education-ontology#isLessonOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/math-education-ontology#CurriculumUnit"/>
+        <rdfs:range rdf:resource="https://w3id.org/math-education-ontology#Lesson"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#hasPrerequisite -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/math-education-ontology#hasPrerequisite">
+        <rdfs:domain rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <rdfs:range rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#hasSpecificCompetency -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/math-education-ontology#hasSpecificCompetency">
+        <owl:inverseOf rdf:resource="https://w3id.org/math-education-ontology#isSpecificCompetencyOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/math-education-ontology#GeneralCompetency"/>
+        <rdfs:range rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#isLessonOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/math-education-ontology#isLessonOf">
+        <rdfs:domain rdf:resource="https://w3id.org/math-education-ontology#Lesson"/>
+        <rdfs:range rdf:resource="https://w3id.org/math-education-ontology#CurriculumUnit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#isSpecificCompetencyOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/math-education-ontology#isSpecificCompetencyOf">
+        <rdfs:domain rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <rdfs:range rdf:resource="https://w3id.org/math-education-ontology#GeneralCompetency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#requiresConcept -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/math-education-ontology#requiresConcept">
+        <rdfs:domain rdf:resource="https://w3id.org/math-education-ontology#MathematicalCompetency"/>
+        <rdfs:range rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#requiresPriorConcept -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/math-education-ontology#requiresPriorConcept">
+        <rdfs:domain rdf:resource="https://w3id.org/math-education-ontology#Lesson"/>
+        <rdfs:range rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#CurriculumUnit -->
+
+    <owl:Class rdf:about="https://w3id.org/math-education-ontology#CurriculumUnit"/>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#GeneralCompetency -->
+
+    <owl:Class rdf:about="https://w3id.org/math-education-ontology#GeneralCompetency">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/math-education-ontology#MathematicalCompetency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#GradeLevel -->
+
+    <owl:Class rdf:about="https://w3id.org/math-education-ontology#GradeLevel"/>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#Lesson -->
+
+    <owl:Class rdf:about="https://w3id.org/math-education-ontology#Lesson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/math-education-ontology#CurriculumUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#MathematicalCompetency -->
+
+    <owl:Class rdf:about="https://w3id.org/math-education-ontology#MathematicalCompetency"/>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#MathematicalConcept -->
+
+    <owl:Class rdf:about="https://w3id.org/math-education-ontology#MathematicalConcept">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#SpecificCompetency -->
+
+    <owl:Class rdf:about="https://w3id.org/math-education-ontology#SpecificCompetency">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/math-education-ontology#MathematicalCompetency"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Simbolurile grafice utilizate pentru reprezentarea numerelor în sistemul de numerație zecimal.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Cifrele arabe</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C10 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C10">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Valoarea obținută prin înmulțirea tuturor cifrelor care compun un număr natural.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Produsul cifrelor unui număr</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C10_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C10_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C10"/>
+        <skos:definition xml:lang="ro">Reprezentarea unei valori date ca produs al unor factori care pot reprezenta cifrele unui număr.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Descompunerea produsului în factori de o cifră</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C10_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C10_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C10"/>
+        <skos:definition xml:lang="ro">Formarea unor numere distincte prin schimbarea ordinii unui set dat de cifre, respectând restricțiile de scriere ale numerelor naturale.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Permutarea cifrelor în formarea numerelor</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C11 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C11">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Valoarea obținută prin adunarea tuturor cifrelor care compun un număr natural.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Suma cifrelor unui număr</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C11_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C11_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Grupuri de două sau trei cifre a căror sumă este egală cu o valoare dată.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Perechi și triplete de cifre cu sumă fixă</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C12 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C12">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Relații de ordine sau condiții numerice impuse cifrelor unui număr ori expresiilor construite cu acestea.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Inegalități și condiții între cifre</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C12_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C12_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C12"/>
+        <skos:definition xml:lang="ro">Condiții în care suma unor cifre trebuie să respecte o limită inferioară sau superioară dată.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Sume de cifre mărginite</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C13 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C13">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Simbolurile I, V, X, L, C, D și M utilizate pentru reprezentarea valorilor numerice în sistemul de numerație roman.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Simbolurile sistemului de numerație roman</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C13_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C13_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C13"/>
+        <skos:definition xml:lang="ro">Corespondența dintre simbolurile I, V, X, L, C, D, M și valorile 1, 5, 10, 50, 100, 500 și 1000.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Valorile zecimale ale simbolurilor romane</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C13_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C13_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C13"/>
+        <skos:definition xml:lang="ro">Transformarea numerelor naturale formate din 2 sau mai multe cifre arabe în număr scris cu cifre romane. Spre exemplu, scrierea numărului 2026 cu cifre romane</skos:definition>
+        <skos:prefLabel xml:lang="ro">Tranformarea numerelor din cifre arabe în cifre romane</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C14 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C14">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Sistem de reprezentare a numerelor prin combinarea simbolurilor romane conform unor reguli de compunere.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Sistemul de numerație roman</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C14_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C14_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C14"/>
+        <skos:definition xml:lang="ro">Regulile de adunare, scădere și repetare a simbolurilor utilizate pentru construirea reprezentărilor numerice romane valide.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Regulile de formare a numerelor romane</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C15 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C15">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Înțelegerea noțiunilor de bază care formează axa numerelor: o dreaptă pe care se fixează originea (punctul corespunzător numărului 0), sensul pozitiv (indicat de o săgeată, de obicei spre dreapta) și un segment ales drept unitate de măsură.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Axa numerelor</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C16 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C16">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C15"/>
+        <skos:definition xml:lang="ro">Identificarea modului în care fiecărui număr natural îi corespunde un punct exact pe axa numerelor, poziția sa fiind determinată de numărul de unități de măsură de la origine.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Reprezentarea și poziționarea pe axă</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C17 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C17">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Determinarea relației de mărime dintre două numere naturale, fie vizual (pe axă), fie analitic.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Compararea numerelor naturale</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C17_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C17_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C17"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C16"/>
+        <skos:definition xml:lang="ro">Înțelegerea faptului că dintre două numere reprezentate pe axă, numărul situat mai la dreapta este întotdeauna cel mai mare.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Compararea vizuală pe axă</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C17_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C17_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C17"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C2"/>
+        <skos:definition xml:lang="ro">Înțelegerea regulii de bază conform căreia un număr cu mai multe cifre este mai mare decât un număr cu mai puține cifre.&quot;@ro &quot;Pentru numere cu același număr de cifre, compararea se face ordin cu ordin, de la stânga la dreapta.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Compararea analitică ( fără axă )</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C18 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C18">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C23"/>
+        <skos:definition xml:lang="ro">Procesul de înlocuire a cifrelor de la un anumit ordin în jos cu cifra zero, obținând astfel un număr mai mic sau egal cu numărul inițial.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Aproximarea numerelor naturale prin lipsă</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C19 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C19">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C23"/>
+        <skos:definition xml:lang="ro">Procesul de mărire cu o unitate a cifrei de la ordinul la care se face aproximarea (și înlocuirea cifrelor inferioare cu zero), obținând un număr strict mai mare decât cel inițial.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Aproximarea numerelor naturale prin adaos</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Valoarea atribuită unei cifre în funcție de poziția ocupată în scrierea unui număr natural.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Valoarea pozițională a cifrelor</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C20 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C20">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C23"/>
+        <skos:definition xml:lang="ro">Alegerea celei mai apropiate aproximări (prin lipsă sau prin adaos) pe baza regulii jumătății: dacă prima cifră înlocuită cu zero este mai mică decât 5 (0, 1, 2, 3, 4), rotunjirea se face prin lipsă; dacă este mai mare sau egală cu 5 (5, 6, 7, 8, 9), rotunjirea se face prin adaos.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Rotunjirea numerelor naturale</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C21 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C21">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C17"/>
+        <skos:definition xml:lang="ro">Așezarea numerelor naturale într-o succesiune crescătoare sau descrescătoare pe baza relațiilor de ordine.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Ordonarea numerelor naturale</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C22 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C22">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C23"/>
+        <skos:definition xml:lang="ro">Determinarea unei valori aproximative suficiente pentru evaluarea rapidă a unei mărimi sau a rezultatului unui calcul.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Estimarea numerelor naturale</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C23 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C23">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C17"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C2"/>
+        <skos:definition xml:lang="ro">Înlocuirea unui număr natural cu o valoare apropiată, aleasă după un anumit ordin și o anumită regulă de aproximare.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Aproximarea numerelor naturale</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C24 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C24">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Definirea operației de adunare și identificarea termenilor și a rezultatului acesteia.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Terminologia operației de adunare</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C24_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C24_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C24"/>
+        <skos:altLabel xml:lang="ro">Identificarea termenilor adunării</skos:altLabel>
+        <skos:definition xml:lang="ro">Numerele naturale $a$ și $b$ care se însumează într-o operație de adunare.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Termenii adunării</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C24_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C24_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C24"/>
+        <skos:definition xml:lang="ro">Diferențierea între forma simbolică necalculată (expresia $a+b$) și valoarea finală calculată a adunării.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Suma neefectuată și suma efectuată</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C25 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C25">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C2"/>
+        <skos:definition xml:lang="ro">Procedura pas cu pas de adunare a numerelor naturale reprezentate în sistemul zecimal.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Algoritmul adunării scrise</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C25_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C25_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C25"/>
+        <skos:definition xml:lang="ro">Așezarea numerelor în coloană astfel încât cifrele de același ordin să fie poziționate pe aceeași verticală.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Alinierea ordinelor de mărime</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C25_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C25_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C25"/>
+        <skos:definition xml:lang="ro">Efectuarea adunării pe coloane atunci când suma cifrelor de pe fiecare ordin este mai mică decât 10.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Adunarea fără trecere peste ordin</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C25_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C25_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C25"/>
+        <skos:altLabel xml:lang="ro">Regula «ținem minte»</skos:altLabel>
+        <skos:altLabel xml:lang="ro">Unități de ordin superior</skos:altLabel>
+        <skos:definition xml:lang="ro">Mecanismul prin care zece unități acumulate la un anumit ordin se transformă și se adaugă ca o unitate la ordinul imediat superior.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Trecerea peste ordin</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C26 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C26">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C24"/>
+        <skos:definition xml:lang="ro">Regulile matematice fundamentale care guvernează operația de adunare a numerelor naturale.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Proprietățile adunării</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C26_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C26_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C26"/>
+        <skos:definition xml:lang="ro">Proprietatea adunării conform căreia schimbarea ordinii termenilor nu modifică suma (a+b = b+a)</skos:definition>
+        <skos:prefLabel xml:lang="ro">Comutativitatea adunării</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C26_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C26_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C26"/>
+        <skos:definition xml:lang="ro">Proprietatea adunării conform căreia modul de grupare a termenilor nu modifică suma ((a+b)+c = a+(b+c))</skos:definition>
+        <skos:prefLabel xml:lang="ro">Asociativitatea adunării</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C26_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C26_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C26"/>
+        <skos:definition xml:lang="ro">Proprietatea numărului 0 de a nu modifica valoarea niciunui termen cu care se adună (a+0 = 0+a = a).</skos:definition>
+        <skos:prefLabel xml:lang="ro">Elementul neutru la adunare</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C26_4 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C26_4">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:altLabel xml:lang="ro">Calculul rapid prin adunare</skos:altLabel>
+        <skos:definition xml:lang="ro">Aplicarea combinată a comutativității și asociativității pentru formarea de sume rotunde în scopul simplificării calculului mintal.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Gruparea convenabilă a termenilor</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C27 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C27">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C26"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C17"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C24"/>
+        <skos:definition xml:lang="ro">Comportamentul egalităților și inegalităților atunci când li se aplică operația de adunare.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Invarianța relațiilor la adunare</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C27_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C27_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C27"/>
+        <skos:definition xml:lang="ro">Păstrarea egalității atunci când se adaugă același număr natural în ambii membri (a=b implică a+c = b+c).</skos:definition>
+        <skos:prefLabel xml:lang="ro">Monotonia adunării în egalități</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C27_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C27_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C27"/>
+        <skos:definition xml:lang="ro">Păstrarea sensului inegalității atunci când se adaugă același număr natural în ambii membri (a&lt;b implică a+c &lt; b+c).</skos:definition>
+        <skos:prefLabel xml:lang="ro">Monotonia adunării în inegalități</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C27_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C27_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C27"/>
+        <skos:definition xml:lang="ro">Proprietatea prin care adunarea a două relații de egalitate rezultă într-o nouă egalitate adevărată (a=b și c=d implică a+c = b+d).</skos:definition>
+        <skos:prefLabel xml:lang="ro">Adunarea membru cu membru a egalităților</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C27_4 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C27_4">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C27"/>
+        <skos:definition xml:lang="ro">Proprietatea prin care adunarea a două inegalități având același sens rezultă într-o nouă inegalitate de același sens (a&lt;b și c&lt;d implică a+c &lt; b+d).</skos:definition>
+        <skos:prefLabel xml:lang="ro">Adunarea membru cu membru a inegalităților de același sens</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C28 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C28">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C26"/>
+        <skos:definition xml:lang="ro">Formula și metoda de calcul rapid pentru suma numerelor naturale consecutive.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Suma lui Gauss</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C28_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C28_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C28"/>
+        <skos:altLabel xml:lang="ro">Suma numerelor de la 1 la un număr natural</skos:altLabel>
+        <skos:altLabel xml:lang="ro">suma numerelor naturale consecutive până la n</skos:altLabel>
+        <skos:definition xml:lang="ro">Identificarea structurii unei sume formate din numere naturale consecutive ce începe de la 1 ($1+2+3+\dots+n$).</skos:definition>
+        <skos:prefLabel xml:lang="ro">Șirul numerelor naturale consecutive de la 1</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C28_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C28_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C28"/>
+        <skos:definition xml:lang="ro">Expresia algebrică S = n * (n+1) : 2 folosită pentru calcularea sumei primelor n numere naturale nenule.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Formula standard a sumei lui Gauss</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C28_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C28_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C28"/>
+        <skos:definition xml:lang="ro">Adaptarea metodei de calcul pentru sume de numere consecutive care nu încep de la numărul 1.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Sume Gauss incomplete sau decalate</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C29 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C29">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C24"/>
+        <skos:altLabel xml:lang="ro">Forme matematice de reprezentare și reconstituire
+a structurilor numerice folosind adunarea.</skos:altLabel>
+        <skos:definition xml:lang="ro">Formalele matematice de reprezentare și reconstituire a structurilor numerice folosind adunarea.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Modelarea algebrică prin adunare</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C29_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C29_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C29"/>
+        <skos:definition xml:lang="ro">Forma algebrică a numerelor naturale consecutive oarecare (n, n+1), pare (2n, 2n+2) sau impare (2n+1, 2n+3).</skos:definition>
+        <skos:prefLabel xml:lang="ro">Reprezentarea algebrică a numerelor consecutive</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C29_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C29_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C29"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C25_3"/>
+        <skos:definition xml:lang="ro">Metoda de reconstituire a cifrelor mascate într-o operație de adunare pe baza analizei trecerilor peste ordin.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Criptaritmetica adunării</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C29_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C29_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C29"/>
+        <skos:definition xml:lang="ro">Evaluarea valorică a unor expresii algebrice prin înlocuirea directă a unor sume algebrice date în ipoteză.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Calculul prin substituție de sume</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C2_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C2_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C2"/>
+        <skos:definition xml:lang="ro">Pozițiile succesive ale cifrelor într-un număr, precum unități, zeci, sute și mii.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Ordinele sistemului zecimal</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C2_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C2_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C2"/>
+        <skos:definition xml:lang="ro">Principiul conform căruia zece unități de un anumit ordin formează o unitate de ordin imediat superior.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Sistemul de grupare zecimală</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Structura și regulile utilizate pentru exprimarea verbală a numerelor naturale scrise cu cifre.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Citirea numerelor naturale</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C30 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C30">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C17"/>
+        <skos:definition xml:lang="ro">Studiul operației inverse adunării, incluzând algoritmul de calcul scris, legăturile cu adunarea, aflarea termenului necunoscut și proprietățile de păstrare a egalităților.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Terminologia și definiția operației de scădere</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C30_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C30_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C30"/>
+        <skos:altLabel xml:lang="ro">descazutul mai mare decat scazatorul</skos:altLabel>
+        <skos:definition xml:lang="ro">Regula de bază conform căreia putem scădea două numere naturale a și b doar dacă a &gt;= b.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Condiția de existență în N a unei diferente</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C30_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C30_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C30"/>
+        <math-education-ontology:requiresPriorConcept rdf:resource="https://w3id.org/math-education-ontology#C30_2"/>
+        <skos:definition xml:lang="ro">Diferențierea corectă între descăzut ($a$), scăzător ($b$) și diferență ($d$).</skos:definition>
+        <skos:prefLabel xml:lang="ro">Termenii scăderii</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C30_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C30_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C30"/>
+        <skos:definition xml:lang="ro">Recunoașterea diferenței neefectuate (expresia matematică, de ex. $534-319$) și a diferenței efectuate (rezultatul calculului, $215$).</skos:definition>
+        <skos:prefLabel xml:lang="ro">Diferența neefectuată și efectuată</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C31 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C31">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C2"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C30"/>
+        <skos:definition xml:lang="ro">Procedura structurată pentru calcularea diferenței a două numere naturale așezate în coloană.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Algoritmul scăderii (calculul scris)</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C31_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C31_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C31"/>
+        <skos:definition xml:lang="ro">Așezarea corectă a numerelor în coloană, ordin sub ordin.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Alinierea ordinelor la scădere</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C31_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C31_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C31"/>
+        <skos:definition xml:lang="ro">Efectuarea diferenței simple pe fiecare coloană atunci când cifrele descăzutului sunt mai mari sau egale cu cele ale scăzătorului.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Scăderea fără trecere peste ordin</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C31_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C31_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C31"/>
+        <skos:definition xml:lang="ro">Regula prin care, dacă unitățile descăzutului nu sunt suficiente, se ia o unitate de ordin superior și se transformă în $10$ unități de ordin imediat inferior.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Scăderea cu trecere peste ordin (împrumutul)</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C32 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C32">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C24"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C30"/>
+        <skos:definition xml:lang="ro">Relațiile matematice care demonstrează că adunarea și scăderea sunt operații inverse, folosite pentru verificarea calculelor.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Legătura dintre adunare și scădere (Proba operațiilor)</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C32_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C32_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C32"/>
+        <skos:definition xml:lang="ro">Relația fundamentală care stabilește că dacă a+b=s, atunci a=s-b și b=s-a.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Scăderea ca operație inversă</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C32_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C32_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C32"/>
+        <skos:definition xml:lang="ro">Verificarea unei sume prin scădere (suma - un termen = celălalt termen).</skos:definition>
+        <skos:prefLabel xml:lang="ro">Proba adunării</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C32_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C32_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C32"/>
+        <skos:definition xml:lang="ro">Verificarea diferenței fie prin adunare (descăzutul = scăzătorul + diferența), fie printr-o altă scădere (descăzutul - diferența = scăzătorul).</skos:definition>
+        <skos:prefLabel xml:lang="ro">Proba scăderii</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C33 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C33">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C32"/>
+        <skos:altLabel xml:lang="ro">Introducere în ecuații</skos:altLabel>
+        <skos:definition xml:lang="ro">Introducere în rezolvarea ecuațiilor simple bazate pe adunare și scădere.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Determinarea unui termen necunoscut</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C33_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C33_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C33"/>
+        <skos:prefLabel xml:lang="ro">Aflarea unui termen necunoscut dintr-o adunare</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C33_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C33_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C33"/>
+        <skos:definition xml:lang="ro">Rezolvarea relațiilor unde primul termen lipsește: x-a=b implică x=b+a</skos:definition>
+        <skos:prefLabel xml:lang="ro">Aflarea descăzutului necunoscut</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C33_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C33_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C33"/>
+        <skos:definition xml:lang="ro">Rezolvarea relațiilor unde al doilea termen lipsește: a-x=b implică x=a-b.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Aflarea scăzătorului necunoscut</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C34 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C34">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C17"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C27"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C30"/>
+        <skos:definition xml:lang="ro">Comportamentul relațiilor de egalitate și inegalitate atunci când li se aplică operația de scădere.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Păstrarea egalității și inegalității prin scădere</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C34_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C34_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C34"/>
+        <skos:definition xml:lang="ro">Regula care arată că dacă a=b, atunci a-c=b-c (cu condiția c &lt;=  a).</skos:definition>
+        <skos:prefLabel xml:lang="ro">Scăderea unei constante dintr-o egalitate</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C34_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C34_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C34"/>
+        <skos:definition xml:lang="ro">Regula care arată că dacă a &lt;= b, atunci a-c &lt;= b-c (cu condiția c &lt;= a).</skos:definition>
+        <skos:prefLabel xml:lang="ro">Scăderea unei constante dintr-o inegalitate</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C34_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C34_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C34"/>
+        <skos:definition xml:lang="ro">Proprietatea conform căreia dacă a=b, c=d și a &gt;= c, atunci a-c=b-d.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Scăderea membru cu membru a egalităților</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C35 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C35">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C35"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C26"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C30"/>
+        <skos:definition xml:lang="ro">Reguli și investigații utilizate pentru simplificarea și eficientizarea calculului mintal.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Reguli avansate și strategii de calcul mental pentru scădere</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C35_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C35_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C35"/>
+        <skos:altLabel xml:lang="ro">Mărirea/micșorarea simultană</skos:altLabel>
+        <skos:definition xml:lang="ro">Regula conform căreia diferența nu se schimbă dacă adunăm sau scădem același număr atât din descăzut, cât și din scăzător: a-b = (a+c)-(b+c) = (a-c)-(b-c).</skos:definition>
+        <skos:prefLabel xml:lang="ro">Invarianța diferenței</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C35_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C35_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C35"/>
+        <skos:definition xml:lang="ro">Aplicarea regulii de desfacere a parantezei: a-(b+c)=a-b-c.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Scăderea unei sume dintr-un număr</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C35_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C35_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C35"/>
+        <skos:definition xml:lang="ro">Aplicarea regulii pentru calcul rapid: a-(b-c)=a-b+c (cu condiția a &gt;=  b &gt;= c).</skos:definition>
+        <skos:prefLabel xml:lang="ro">Scăderea unei diferențe dintr-un număr</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C36 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C36">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C21"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C26"/>
+        <skos:definition xml:lang="ro">Identificarea termenilor specifici și înțelegerea relației fundamentale dintre înmulțire și adunare.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Terminologia și definiția operației de înmulțire</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C36_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C36_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C36"/>
+        <skos:definition xml:lang="ro">Conceptul de produs = sumă repetată de atâtea ori cât indică deînmulțitul</skos:definition>
+        <skos:prefLabel xml:lang="ro">C36_1  Înmulțirea ca adunare repetată</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C36_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C36_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C36"/>
+        <skos:definition xml:lang="ro">Identificarea factorilor (a și b) și a produsului unui produs.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Terminologia specifică înmulțirii</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C36_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C36_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C36"/>
+        <skos:definition xml:lang="ro">Diferențierea expresiei matematice a înmulțirii de rezultatul ei</skos:definition>
+        <skos:prefLabel xml:lang="ro">Diferenta dintre Produs efectuat si neefectuat</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C37 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C37">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C1"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C2"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C25"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C36"/>
+        <skos:definition xml:lang="ro">Regulile de generare și însumare a produselor parțiale pentru calculul în coloană.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Algoritmul înmulțirii (calculul scris)</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C37_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C37_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C37"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C34_1"/>
+        <skos:definition xml:lang="ro">Decalarea spre stânga cu un ordin a fiecărui nou produs parțial obținut</skos:definition>
+        <skos:prefLabel xml:lang="ro">Generarea produselor parțiale</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C37_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C37_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C37"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C37_1"/>
+        <skos:definition xml:lang="ro">Decalarea spre stânga cu un ordin a fiecărui nou produs parțial obținut.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Alinierea corectă a produselor parțiale</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C37_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C37_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C37"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C37_2"/>
+        <skos:definition xml:lang="ro">Adunarea produselor parțiale pentru obținerea rezultatului final.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Însumarea a doua numere naturale</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C38 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C38">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C38"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C37"/>
+        <skos:definition xml:lang="ro">Regula care permite schimbarea ordinii factorilor fără a altera produsul.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Proprietatea de comutativitate la înmulțire</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C38_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C38_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C38"/>
+        <skos:definition xml:lang="ro">Aplicarea regulii a * b = b * a</skos:definition>
+        <skos:prefLabel xml:lang="ro">Definirea comutativității</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C38_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C38_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C38"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C38_1"/>
+        <skos:definition xml:lang="ro">Utilizarea comutativității pentru a schimba ordinea factorilor în vederea ușurării calculului.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Aplicarea comutativității</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C39 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C39">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C36"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C39_1"/>
+        <skos:definition xml:lang="ro">Regula care permite gruparea diferită a factorilor în calculul unui produs.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Proprietatea de asociativitate la înmulțire</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C39_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C39_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C39"/>
+        <skos:definition xml:lang="ro">Înțelegerea regulii (a * b) * c = a * (b * c)</skos:definition>
+        <skos:prefLabel xml:lang="ro">Definirea asociativității</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C39_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C39_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C39"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C39_1"/>
+        <skos:definition xml:lang="ro">Folosirea asociativității pentru a forma numere rotunde</skos:definition>
+        <skos:prefLabel xml:lang="ro">Calcul rapid prin asociativitate ( grupare )</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C39_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C39_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C39"/>
+        <skos:definition xml:lang="ro">Observarea asocierii numărului 5 cu orice număr par pentru obținerea de multipli de 10.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Asocierea factorului 5 cu un număr par</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C3_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C3_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C3"/>
+        <skos:definition xml:lang="ro">Gruparea cifrelor unui număr în clase de câte trei cifre, începând de la dreapta spre stânga.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Clasele numerelor</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C3_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C3_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C3"/>
+        <skos:definition xml:lang="ro">Denumirile asociate grupelor de câte trei cifre, precum clasa unităților, miilor, milioanelor și miliardelor.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Denumirea claselor numerice</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C4 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C4">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Reprezentarea unui număr natural prin cuvinte în locul notației cu cifre.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Reprezentarea textuală a numerelor naturale</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C40 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C40">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C36"/>
+        <skos:definition xml:lang="ro">Proprietatea numărului 1 în cadrul operației de înmulțire.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Elementul neutru al înmulțirii</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C40_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C40_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C40"/>
+        <skos:definition xml:lang="ro">Recunoașterea faptului că numărul 1 nu schimbă valoarea factorului: a * 1 = 1 * a = a.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Anularea produsului prin înmulțire cu zero</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C41 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C41">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C36"/>
+        <skos:definition xml:lang="ro">Proprietatea de absorbție (anulare) a numărului 0 în operația de înmulțire.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Rolul numărului 0 la înmulțire</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C41_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C41_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C41"/>
+        <skos:definition xml:lang="ro">Orice număr înmulțit cu 0 dă 0, prin exemplificare, a*0 = 0*a = 0</skos:definition>
+        <skos:prefLabel xml:lang="ro">Anularea produsului prin înmulțire cu zero</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C41_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C41_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C41"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C40_1"/>
+        <skos:definition xml:lang="ro">Dacă un produs este egal cu 0 (a * b = 0), atunci cel puțin unul dintre factori este obligatoriu 0 (a=0 sau b=0).</skos:definition>
+        <skos:prefLabel xml:lang="ro">Deducerea factorului nul</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C42 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C42">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C26"/>
+        <skos:definition xml:lang="ro">Relația algebrică prin care înmulțirea se distribuie peste adunare și scădere.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Distributivitatea înmulțirii</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C42_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C42_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C42"/>
+        <skos:definition xml:lang="ro">Înțelegerea și aplicarea egalității a * (b+c) = a * b + a * c</skos:definition>
+        <skos:prefLabel xml:lang="ro">Distributivitatea față de adunare</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C42_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C42_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C42"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C30"/>
+        <skos:definition xml:lang="ro">Înțelegerea și aplicarea egalității a*(b-c) = a*b - a*c</skos:definition>
+        <skos:prefLabel xml:lang="ro">Distributivitatea față de scădere</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C42_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C42_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C42"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C42_1"/>
+        <skos:definition xml:lang="ro">Utilizarea distributivității pentru a rezolva mintal înmulțiri complexe</skos:definition>
+        <skos:prefLabel xml:lang="ro">Distributivitatea în ecuații</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C43 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C43">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C27"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C34"/>
+        <skos:definition xml:lang="ro">Regulile de păstrare a valorii de adevăr atunci când se înmulțesc membrii unei relații matematice.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Relațiile de egalitate și inegalitate la înmulțire</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C43_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C43_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C43"/>
+        <skos:definition xml:lang="ro">Având o egalitate dată, a = b, înmulțind cu un număr natural c, vom obține 
+a*c = b*c, oricare a,b,c, numere naturale.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Înmulțirea egalităților cu o constantă</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C43_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C43_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C43"/>
+        <skos:definition xml:lang="ro">Având o egalitate dată, a &lt; b, înmulțind cu un număr natural c, vom obține 
+a*c &lt; b*c, oricare a,b,c, numere naturale.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Înmulțirea inegalităților cu o constantă nenulă</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C43_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C43_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C43"/>
+        <skos:definition xml:lang="ro">Dacă a = b și c = d, atunci a * c &lt; b * d, pentru oricare a,b,c,d, numere naturale nenule</skos:definition>
+        <skos:prefLabel xml:lang="ro">Înmulțirea membru cu membru (egalități)</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C43_4 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C43_4">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C43"/>
+        <skos:definition xml:lang="ro">Dacă a &lt; b și c &lt; d, atunci a * c &lt; b * d, pentru oricare a,b,c,d, numere naturale nenule</skos:definition>
+        <skos:prefLabel xml:lang="ro">Înmulțirea membru cu membru (inegalități)</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C44 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C44">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Analiza caracteristicii par/impar a rezultatului unei înmulțiri în funcție de factorii săi.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Paritatea produsului</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C44_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C44_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C44"/>
+        <skos:definition xml:lang="ro">Înțelegerea faptului că este suficient ca un singur factor dintr-o înmulțire să fie par pentru ca rezultatul final să fie obligatoriu par.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Regula produsului par</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C44_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C44_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C44"/>
+        <skos:definition xml:lang="ro">Înțelegerea faptului că un produs este impar dacă, și numai dacă, absolut toți factorii săi sunt numere impare.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Regula produsului impar</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C44_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C44_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C44"/>
+        <skos:definition xml:lang="ro">Deducerea logică a faptului că înmulțirea a două numere naturale consecutive (n și n+1) generează mereu un număr par (deoarece unul dintre ele este garantat par).</skos:definition>
+        <skos:prefLabel xml:lang="ro">Produsul a două numere consecutive</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C45 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C45">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Metode de deducere a cifrei unităților pentru un produs de numere.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Analiza ultimei cifre a produsului</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C45_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C45_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C45"/>
+        <skos:definition xml:lang="ro">Ultima cifră a unui produs mare se obține calculând doar produsul ultimelor cifre ale fiecărui factor.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Regula de bază a ultimei cifre</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C45_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C45_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C45"/>
+        <skos:definition xml:lang="ro">Dacă cel puțin un factor are ultima cifră 0, produsul va avea ultima cifră 0.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Înmulțirea cu factori terminați în 0</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C45_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C45_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C45"/>
+        <skos:definition xml:lang="ro">Dacă înmulțim un număr terminat în cifra 5 cu cel puțin un număr par, ultima cifră a produsului este garantat 0</skos:definition>
+        <skos:prefLabel xml:lang="ro">Factorul 5 și factorii pari</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C45_4 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C45_4">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C45"/>
+        <skos:definition xml:lang="ro">Dacă înmulțim un număr terminat în cifra 5 doar cu numere impare, ultima cifră a produsului este garantat 5.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Factorul 5 și factorii exclusiv impari</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C45_5 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C45_5">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C45"/>
+        <skos:definition xml:lang="ro">Produsul oricăror numere terminate în 1 se va termina în 1; produsul oricăror numere terminate în 6 se va termina în 6.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Stabilitatea cifrelor 1 și 6</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C45_6 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C45_6">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C45"/>
+        <skos:definition xml:lang="ro">Când calculăm un produs lung, numărul de zerouri de la sfârșit este dat de câte perechi de factori 2 și 5 se pot forma din descompunerea numerelor.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Determinarea numărului de zerouri terminale</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C46 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C46">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#C36"/>
+        <skos:definition xml:lang="ro">Definiția produsului primelor $n$ numere naturale nenule și studiul resturilor/zerourilor acestuia.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Factorialul unui număr natural</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C46_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C46_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C46"/>
+        <skos:definition xml:lang="ro">Înțelegerea faptului că n! este o scriere prescurtată pentru înmulțirea tuturor numerelor de la 1 la n.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Definiția factorialului</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C46_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C46_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C46"/>
+        <skos:definition xml:lang="ro">Memorarea regulii stricte conform căreia 0! este egal cu 1.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Convenția pentru 0</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C46_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C46_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C46"/>
+        <skos:definition xml:lang="ro">Deducerea faptului că pentru orice n &gt;= 5, n! se termină în cifra 0 (pentru că produsul va include mereu factorii 2 și 5).</skos:definition>
+        <skos:prefLabel xml:lang="ro">Ultima cifră a factorialului</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C46_4 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C46_4">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C46"/>
+        <skos:definition xml:lang="ro">Calcularea numărului de zerouri terminale pentru n! numărând de câte ori apare factorul 5 în numerele din acel șir.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Determinarea zerourilor unui factorial</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C4_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C4_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C4"/>
+        <skos:definition xml:lang="ro">Asocierea dintre reprezentarea cu cifre a unui număr și forma sa scrisă cu litere.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Corespondența dintre reprezentarea numerică și cea textuală</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C5 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C5">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Transformarea unui număr exprimat prin cuvinte în reprezentarea sa standard cu cifre arabe.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Conversia reprezentării textuale în reprezentare numerică</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C5_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C5_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C5"/>
+        <skos:definition xml:lang="ro">Rolul cifrei zero în marcarea unui ordin de mărime care nu conține unități în reprezentarea unui număr.</skos:definition>
+        <skos:prefLabel xml:lang="ro">&quot;Zero ca marcator al ordinelor lipsă</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C6 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C6">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Caracteristicile unui număr determinate de cifrele care îl compun și de pozițiile ocupate de acestea.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Proprietățile structurale ale scrierii numerelor</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C6_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C6_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C6"/>
+        <skos:definition xml:lang="ro">Condiții privind prezența, identitatea sau poziția unei cifre în scrierea unui număr natural.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Criterii structurale asupra cifrelor</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C7 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C7">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Reprezentarea unui număr natural ca sumă a produselor dintre cifrele sale și valorile poziționale corespunzătoare.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Descompunerea în baza 10</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C7_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C7_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C7"/>
+        <skos:definition xml:lang="ro">Scrierea unui număr ca sumă a valorilor corespunzătoare cifrelor sale pe fiecare ordin al sistemului zecimal.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Forma descompusă a numerelor naturale</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C7_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C7_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C7"/>
+        <skos:definition xml:lang="ro">Reprezentarea numerelor de două sau mai multe cifre prin litere care substituie cifrele componente, de exemplu a·10+b sau a·100+b·10+c.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Reprezentarea literală a numerelor</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C8 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C8">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Formarea reprezentării compacte a unui număr natural pornind de la valorile corespunzătoare ordinelor sale.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Reconstituirea numerelor din forma descompusă</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C9 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C9">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Principiul conform căruia egalitatea a două reprezentări ale aceluiași număr permite determinarea cifrelor necunoscute prin compararea pozițiilor corespunzătoare.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Egalitatea reprezentărilor numerice</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#C9_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#C9_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C9"/>
+        <skos:definition xml:lang="ro">Principiul conform căruia două numere sunt egale atunci când cifrele aflate pe poziții corespunzătoare au aceleași valori.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Corespondența cifrelor pe poziții</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#Competency_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#Competency_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#GeneralCompetency"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#Competency_1_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#Competency_1_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <math-education-ontology:isSpecificCompetencyOf rdf:resource="https://w3id.org/math-education-ontology#Competency_1"/>
+        <math-education-ontology:requiresConcept rdf:resource="https://w3id.org/math-education-ontology#NaturalNumber"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#GC1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#GC1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#GeneralCompetency"/>
+        <skos:prefLabel xml:lang="ro">Identificarea unor date, mărimi și relații matematice, în contextul în care acestea apar</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#GC2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#GC2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#GeneralCompetency"/>
+        <skos:prefLabel xml:lang="ro">Prelucrarea unor date matematice de tip cantitativ, calitativ, structural, cuprinse în diverse surse informaționale</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#GC3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#GC3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#GeneralCompetency"/>
+        <skos:prefLabel xml:lang="ro">Utilizarea conceptelor și a algoritmilor specifici în diverse contexte matematice</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#GC4 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#GC4">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#GeneralCompetency"/>
+        <skos:prefLabel xml:lang="ro">Exprimarea în limbajul specific matematicii a informațiilor, concluziilor și demersurilor de rezolvare pentru o situație dată</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#GC5 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#GC5">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#GeneralCompetency"/>
+        <skos:prefLabel xml:lang="ro">Analizarea caracteristicilor matematice ale unei situații date</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#GC6 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#GC6">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#GeneralCompetency"/>
+        <skos:prefLabel xml:lang="ro">Modelarea matematică a unei situații date, prin integrarea achizițiilor din diferite domenii</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#Grade5 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#Grade5">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#GradeLevel"/>
+        <math-education-ontology:hasCurriculumUnit rdf:resource="https://w3id.org/math-education-ontology#NaturalNumbersUnit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#Lesson_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#Lesson_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#Lesson"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C1"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C10"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C11"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C12"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C13"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C14"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C2"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C3"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C4"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C5"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C6"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C7"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C8"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C9"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC1_1"/>
+        <skos:definition xml:lang="ro">Lecție introductivă privind reprezentarea, citirea și scrierea numerelor naturale</skos:definition>
+        <skos:definition xml:lang="ro">Lecție introductivă privind reprezentarea, citirea și scrierea numerelor naturale.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Scrierea si citirea numerelor naturale</skos:prefLabel>
+        <skos:scopeNote xml:lang="ro">Acoperă identificarea cifrelor arabe, descompunerea polinomială și scrierea cu cifre romane, stabilind fundamentul pentru operațiile aritmetice.</skos:scopeNote>
+        <skos:scopeNote xml:lang="ro">Acoperă identificarea și poziția cifrelor arabe, descompunerea în baza 10 și scrierea cu cifre romane, stabilind fundamentul pentru operațiile aritmetice.</skos:scopeNote>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#Lesson_10 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#Lesson_10">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#Lesson"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC2_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC3_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC5_1"/>
+        <skos:definition xml:lang="ro">Aplicarea operațiilor de înmulțire, împărțire și ridicare la putere asupra expresiilor exponențiale.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Reguli de calcul cu puteri</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#Lesson_11 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#Lesson_11">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#Lesson"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC2_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC3_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC5_1"/>
+        <skos:definition xml:lang="ro">Strategii algebrice de aducere la o bază comună sau la un exponent comun pentru stabilirea relațiilor de ordine.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Compararea puterilor</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#Lesson_12 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#Lesson_12">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#Lesson"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC1_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC4_1"/>
+        <skos:definition xml:lang="ro">Aprofundarea sistemului de numerație zecimal prin puteri și introducerea sistemului binar utilizat în informatică.</skos:definition>
+        <skos:hiddenLabel xml:lang="ro">Scrierea în baza 10. Scrierea în baza 2</skos:hiddenLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#Lesson_13 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#Lesson_13">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#Lesson"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC2_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC3_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC5_1"/>
+        <skos:definition xml:lang="ro">Sinteza regulilor de prioritizare a operațiilor și de degradare a parantezelor (rotunde, pătrate, acolade)</skos:definition>
+        <skos:prefLabel xml:lang="ro">Aplicarea combinată a tuturor algoritmilor și proprietăților studiate pe parcursul capitolului.</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#Lesson_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#Lesson_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#Lesson"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C15"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C16"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C17"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C21"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C22"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C23"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC1_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC4_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC5_1"/>
+        <skos:altLabel xml:lang="ro">Compararea numerelor naturale</skos:altLabel>
+        <skos:altLabel xml:lang="ro">aproximarea numerelor</skos:altLabel>
+        <skos:altLabel xml:lang="ro">axa numerelor</skos:altLabel>
+        <skos:definition xml:lang="ro">Studiul relațiilor de ordine și al poziționării numerelor naturale pe axă.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Reprezentarea pa axa a numerelor. Compararea si ordonarea numerelor naturale; Aproximari, estimari</skos:prefLabel>
+        <skos:scopeNote xml:lang="ro">Include regulile logice de ordonare, precum și rotunjirile și aproximările prin lipsă sau adaos.</skos:scopeNote>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#Lesson_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#Lesson_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#Lesson"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C24"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C25"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C26"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C27"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C28"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C29"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC2_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC3_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC5_1"/>
+        <math-education-ontology:requiresPriorConcept rdf:resource="https://w3id.org/math-education-ontology#C17"/>
+        <math-education-ontology:requiresPriorConcept rdf:resource="https://w3id.org/math-education-ontology#C2"/>
+        <skos:definition xml:lang="ro">Însușirea algoritmului de adunare, a terminologiei specifice și a proprietăților matematice.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Adunarea numerelor naturale și proprietățile acesteia</skos:prefLabel>
+        <skos:scopeNote xml:lang="ro">Introduce comutativitatea, asociativitatea, elementul neutru și Suma lui Gauss.</skos:scopeNote>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#Lesson_4 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#Lesson_4">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#Lesson"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C30"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C31"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C32"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C33"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C34"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C35"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC2_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC3_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC5_1"/>
+        <math-education-ontology:requiresPriorConcept rdf:resource="https://w3id.org/math-education-ontology#C17"/>
+        <math-education-ontology:requiresPriorConcept rdf:resource="https://w3id.org/math-education-ontology#C2"/>
+        <math-education-ontology:requiresPriorConcept rdf:resource="https://w3id.org/math-education-ontology#C24"/>
+        <math-education-ontology:requiresPriorConcept rdf:resource="https://w3id.org/math-education-ontology#C25"/>
+        <skos:definition xml:lang="ro">tudiul operației de scădere a numerelor naturale, incluzând
+terminologia specifică, algoritmul de calcul scris, relația cu
+adunarea, determinarea termenilor necunoscuți și proprietăți
+ale operației de scădere.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Scăderea numerelor naturale</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#Lesson_5 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#Lesson_5">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#Lesson"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C36"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C37"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C38"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C39"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C40"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C41"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C42"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C43"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C44"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C45"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#C46"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC2_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC3_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC5_1"/>
+        <math-education-ontology:requiresPriorConcept rdf:resource="https://w3id.org/math-education-ontology#C24"/>
+        <math-education-ontology:requiresPriorConcept rdf:resource="https://w3id.org/math-education-ontology#C25"/>
+        <math-education-ontology:requiresPriorConcept rdf:resource="https://w3id.org/math-education-ontology#C26"/>
+        <math-education-ontology:requiresPriorConcept rdf:resource="https://w3id.org/math-education-ontology#C27"/>
+        <math-education-ontology:requiresPriorConcept rdf:resource="https://w3id.org/math-education-ontology#C31"/>
+        <skos:definition xml:lang="ro">Asimilarea înmulțirii ca adunare repetată și a proprietăților algebrice asociate.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Înmulțirea numerelor naturale și proprietățile acesteia</skos:prefLabel>
+        <skos:scopeNote xml:lang="ro">Pune accent major pe distributivitatea față de adunare și scădere, precum și pe analiza ultimei cifre a unui produs.</skos:scopeNote>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#Lesson_6 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#Lesson_6">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#Lesson"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC3_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC5_1"/>
+        <skos:definition xml:lang="ro">Aplicarea distributivității înmulțirii în sens invers pentru simplificarea și optimizarea calculelor algebrice.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Factorul comun</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#Lesson_7 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#Lesson_7">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#Lesson"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC2_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC3_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC5_1"/>
+        <skos:definition xml:lang="ro">Studiul împărțirii exacte ca proces de distribuire echitabilă și ca operație inversă a înmulțirii.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Împărțirea cu rest 0 a numerelor naturale</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#Lesson_8 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#Lesson_8">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#Lesson"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC2_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC3_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC5_1"/>
+        <skos:definition xml:lang="ro">Însușirea Teoremei Împărțirii cu Rest și a algoritmului general de calcul scris.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Împărțirea cu rest a numerelor naturale</skos:prefLabel>
+        <skos:scopeNote xml:lang="ro">Include restricția fundamentală conform căreia restul trebuie să fie strict mai mic decât împărțitorul.</skos:scopeNote>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#Lesson_9 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#Lesson_9">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#Lesson"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC2_1"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#SC3_1"/>
+        <skos:definition xml:lang="ro">Introducerea ridicării la putere ca înmulțire repetată a aceleiași baze și studiul proprietăților pătratelor perfecte.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Puterea cu exponent natural. Pătratul unui număr natural</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#NaturalNumber -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#NaturalNumber">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:definition xml:lang="ro">Număr utilizat pentru numărarea elementelor unei mulțimi.</skos:definition>
+        <skos:prefLabel xml:lang="en">Natural number</skos:prefLabel>
+        <skos:prefLabel xml:lang="ro">Număr natural</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#NaturalNumbersUnit -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#NaturalNumbersUnit">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#CurriculumUnit"/>
+        <math-education-ontology:containsConcept rdf:resource="https://w3id.org/math-education-ontology#NaturalNumber"/>
+        <math-education-ontology:developsCompetency rdf:resource="https://w3id.org/math-education-ontology#Competency_1_1"/>
+        <skos:prefLabel xml:lang="ro">Multimea numerelor naturale</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#Power -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#Power">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <math-education-ontology:hasPrerequisite rdf:resource="https://w3id.org/math-education-ontology#NaturalNumber"/>
+        <skos:definition xml:lang="ro">Scriere prescurtată a unei înmulțiri repetate cu factori egali.</skos:definition>
+        <skos:prefLabel xml:lang="en">Power</skos:prefLabel>
+        <skos:prefLabel xml:lang="ro">Putere</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#SC1_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#SC1_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <math-education-ontology:isSpecificCompetencyOf rdf:resource="https://w3id.org/math-education-ontology#GC1"/>
+        <skos:prefLabel xml:lang="ro">Identificarea numerelor naturale în contexte variate</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#SC1_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#SC1_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <math-education-ontology:isSpecificCompetencyOf rdf:resource="https://w3id.org/math-education-ontology#GC1"/>
+        <skos:prefLabel xml:lang="ro">Identificarea fracțiilor ordinare sau zecimale în contexte variate</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#SC1_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#SC1_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <math-education-ontology:isSpecificCompetencyOf rdf:resource="https://w3id.org/math-education-ontology#GC1"/>
+        <skos:prefLabel xml:lang="ro">Identificarea noțiunilor geometrice elementare și a unităților de măsură în diferite contexte</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#SC2_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#SC2_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <math-education-ontology:isSpecificCompetencyOf rdf:resource="https://w3id.org/math-education-ontology#GC2"/>
+        <skos:prefLabel xml:lang="ro">Efectuarea calculelor cu numere naturale folosind operațiile și proprietățile acestora</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#SC2_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#SC2_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <math-education-ontology:isSpecificCompetencyOf rdf:resource="https://w3id.org/math-education-ontology#GC2"/>
+        <skos:prefLabel xml:lang="ro">Efectuarea calculelor cu fracții folosind proprietățile operațiilor aritmetice</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#SC2_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#SC2_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <math-education-ontology:isSpecificCompetencyOf rdf:resource="https://w3id.org/math-education-ontology#GC2"/>
+        <skos:prefLabel xml:lang="ro">Utilizarea instrumentelor geometrice pentru măsurarea sau construirea configurațiilor geometrice</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#SC3_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#SC3_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <math-education-ontology:isSpecificCompetencyOf rdf:resource="https://w3id.org/math-education-ontology#GC3"/>
+        <skos:prefLabel xml:lang="ro">Utilizarea regulilor de calcul pentru operații cu numere naturale și divizibilitate</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#SC3_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#SC3_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <math-education-ontology:isSpecificCompetencyOf rdf:resource="https://w3id.org/math-education-ontology#GC3"/>
+        <skos:prefLabel xml:lang="ro">Utilizarea algoritmilor pentru efectuarea operațiilor cu fracții ordinare sau zecimale</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#SC3_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#SC3_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <math-education-ontology:isSpecificCompetencyOf rdf:resource="https://w3id.org/math-education-ontology#GC3"/>
+        <skos:prefLabel xml:lang="ro">Determinarea perimetrelor, ariilor și volumelor și exprimarea lor în unități corespunzătoare</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#SC4_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#SC4_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <math-education-ontology:isSpecificCompetencyOf rdf:resource="https://w3id.org/math-education-ontology#GC4"/>
+        <skos:prefLabel xml:lang="ro">Exprimarea matematică a proprietăților privind compararea, aproximarea, estimarea și operațiile cu numere naturale</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#SC4_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#SC4_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <math-education-ontology:isSpecificCompetencyOf rdf:resource="https://w3id.org/math-education-ontology#GC4"/>
+        <skos:prefLabel xml:lang="ro">Utilizarea limbajului specific fracțiilor și procentelor în situații date</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#SC4_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#SC4_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <math-education-ontology:isSpecificCompetencyOf rdf:resource="https://w3id.org/math-education-ontology#GC4"/>
+        <skos:prefLabel xml:lang="ro">Transpunerea în limbaj matematic a problemelor practice despre perimetre, arii și volume</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#SC5_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#SC5_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <math-education-ontology:isSpecificCompetencyOf rdf:resource="https://w3id.org/math-education-ontology#GC5"/>
+        <skos:prefLabel xml:lang="ro">Analizarea situațiilor cu numere naturale pentru estimarea sau verificarea validității calculelor</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#SC5_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#SC5_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <math-education-ontology:isSpecificCompetencyOf rdf:resource="https://w3id.org/math-education-ontology#GC5"/>
+        <skos:prefLabel xml:lang="ro">Analizarea situațiilor cu fracții pentru estimarea sau verificarea validității calculelor</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#SC5_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#SC5_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <math-education-ontology:isSpecificCompetencyOf rdf:resource="https://w3id.org/math-education-ontology#GC5"/>
+        <skos:prefLabel xml:lang="ro">Interpretarea unei configurații geometrice prin identificarea elementelor, măsurilor și relațiilor dintre ele</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#SC6_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#SC6_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <math-education-ontology:isSpecificCompetencyOf rdf:resource="https://w3id.org/math-education-ontology#GC6"/>
+        <skos:prefLabel xml:lang="ro">Modelarea cu numere naturale a unei situații, rezolvarea ei prin metode aritmetice și interpretarea rezultatului</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#SC6_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#SC6_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <math-education-ontology:isSpecificCompetencyOf rdf:resource="https://w3id.org/math-education-ontology#GC6"/>
+        <skos:prefLabel xml:lang="ro">Reprezentarea matematică prin fracții a unor situații intra- și interdisciplinare</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#SC6_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#SC6_3">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#SpecificCompetency"/>
+        <math-education-ontology:isSpecificCompetencyOf rdf:resource="https://w3id.org/math-education-ontology#GC6"/>
+        <skos:prefLabel xml:lang="ro">Analizarea problemelor practice cu elemente de geometrie și unități de măsură</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#c1_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#c1_1">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C1"/>
+        <skos:definition xml:lang="ro">Mulțimea celor zece cifre utilizate în sistemul zecimal: 0, 1, 2, 3, 4, 5, 6, 7, 8 și 9.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Setul de bază al cifrelor arabe</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/math-education-ontology#c1_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/math-education-ontology#c1_2">
+        <rdf:type rdf:resource="https://w3id.org/math-education-ontology#MathematicalConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/math-education-ontology#C1"/>
+        <skos:definition xml:lang="ro">Regula conform căreia prima cifră a unui număr natural format din două sau mai multe cifre trebuie să fie diferită de zero.</skos:definition>
+        <skos:prefLabel xml:lang="ro">Setul de bază al cifrelor arabe</skos:prefLabel>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

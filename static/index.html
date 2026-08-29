@@ -1,0 +1,3554 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Math Education Ontology
+    </title>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            background:
+                #f5f7fa;
+
+            color:
+                #222;
+
+        }
+
+
+        header {
+
+            background:
+                #263b5e;
+
+            color:
+                white;
+
+            padding:
+                20px 30px;
+
+        }
+
+
+        header h1 {
+
+            margin:
+                0;
+
+            font-size:
+                24px;
+
+        }
+
+
+        header p {
+
+            margin:
+                6px 0 0;
+
+            opacity:
+                0.8;
+
+        }
+
+
+        .container {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                330px 1fr;
+
+            min-height:
+                calc(100vh - 90px);
+
+        }
+
+
+        .sidebar {
+
+            background:
+                white;
+
+            border-right:
+                1px solid #ddd;
+
+            padding:
+                20px;
+
+        }
+
+
+        .sidebar h2 {
+
+            margin-top:
+                0;
+
+            font-size:
+                18px;
+
+        }
+
+
+        .lesson {
+
+            display:
+                block;
+
+            width:
+                100%;
+
+            text-align:
+                left;
+
+            padding:
+                12px;
+
+            margin-bottom:
+                8px;
+
+            border:
+                1px solid #ddd;
+
+            border-radius:
+                6px;
+
+            background:
+                white;
+
+            cursor:
+                pointer;
+
+        }
+
+
+        .lesson:hover {
+
+            background:
+                #eef3f9;
+
+        }
+
+
+        .lesson.active {
+
+            background:
+                #263b5e;
+
+            color:
+                white;
+
+        }
+
+
+        .content {
+
+            padding:
+                30px;
+
+        }
+
+
+        .card {
+
+            background:
+                white;
+
+            padding:
+                24px;
+
+            border-radius:
+                8px;
+
+            margin-bottom:
+                20px;
+
+            border:
+                1px solid #e0e0e0;
+
+        }
+
+
+        .hidden {
+
+            display:
+                none !important;
+
+        }
+
+
+        .concept {
+
+            padding:
+                12px;
+
+            border-bottom:
+                1px solid #eee;
+
+        }
+
+
+        .concept:last-child {
+
+            border-bottom:
+                none;
+
+        }
+
+
+        .concept-id {
+
+            font-size:
+                12px;
+
+            color:
+                #777;
+
+            margin-bottom:
+                3px;
+
+        }
+
+
+        .concept-button {
+
+            display:
+                block;
+
+            width:
+                100%;
+
+            text-align:
+                left;
+
+            background:
+                white;
+
+            border:
+                none;
+
+            cursor:
+                pointer;
+
+        }
+
+
+        .concept-button:hover {
+
+            background:
+                #eef3f9;
+
+        }
+
+
+        .competency {
+
+            padding:
+                12px;
+
+            background:
+                #f1f5f9;
+
+            margin-bottom:
+                8px;
+
+            border-radius:
+                5px;
+
+        }
+
+
+        .empty {
+
+            color:
+                #777;
+
+        }
+
+
+        .related-concept {
+
+            display:
+                block;
+
+            width:
+                100%;
+
+            text-align:
+                left;
+
+            padding:
+                10px;
+
+            margin-bottom:
+                6px;
+
+            border:
+                1px solid #ddd;
+
+            border-radius:
+                5px;
+
+            background:
+                #f8fafc;
+
+            cursor:
+                pointer;
+
+        }
+
+
+        .related-concept:hover {
+
+            background:
+                #eef3f9;
+
+        }
+
+
+        .prior-concept-button {
+
+            border-left:
+                4px solid #dc2626;
+
+            background:
+                #fff7f7;
+
+        }
+
+
+        .prior-concept-button:hover {
+
+            background:
+                #feecec;
+
+        }
+
+
+        .concept-toolbar {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                10px;
+
+            margin-bottom:
+                18px;
+
+            padding-bottom:
+                14px;
+
+            border-bottom:
+                1px solid #eee;
+
+        }
+
+
+        .back-button {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            gap:
+                5px;
+
+            padding:
+                9px 15px;
+
+            border:
+                none;
+
+            border-radius:
+                6px;
+
+            background:
+                #263b5e;
+
+            color:
+                white;
+
+            font-weight:
+                bold;
+
+            cursor:
+                pointer;
+
+        }
+
+
+        .back-button:hover {
+
+            background:
+                #354f7c;
+
+        }
+
+
+        .graph-header {
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+            gap:
+                15px;
+
+            flex-wrap:
+                wrap;
+
+            margin-bottom:
+                15px;
+
+        }
+
+
+        .graph-header h2 {
+
+            margin:
+                0;
+
+        }
+
+
+        .graph-button {
+
+            padding:
+                8px 13px;
+
+            border:
+                1px solid #ccd4df;
+
+            border-radius:
+                6px;
+
+            background:
+                white;
+
+            cursor:
+                pointer;
+
+            font-weight:
+                600;
+
+            color:
+                #263b5e;
+
+        }
+
+
+        .graph-button:hover {
+
+            background:
+                #eef3f9;
+
+        }
+
+
+        .legend {
+
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                14px;
+
+            margin-bottom:
+                18px;
+
+            font-size:
+                13px;
+
+            color:
+                #555;
+
+        }
+
+
+        .legend-item {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                6px;
+
+        }
+
+
+        .dot {
+
+            width:
+                12px;
+
+            height:
+                12px;
+
+            border-radius:
+                50%;
+
+        }
+
+
+        .lesson-dot {
+            background: #7c3aed;
+        }
+
+
+        .concept-dot {
+            background: #263b5e;
+        }
+
+
+        .subconcept-dot {
+            background: #64748b;
+        }
+
+
+        .prerequisite-dot {
+            background: #d97706;
+        }
+
+
+        .competency-dot {
+            background: #059669;
+        }
+
+
+        .required-dot {
+            background: #0891b2;
+        }
+
+
+        #cy {
+
+            width:
+                100%;
+
+            height:
+                650px;
+
+            border:
+                1px solid #ddd;
+
+            border-radius:
+                8px;
+
+            background:
+                #fafafa;
+
+        }
+
+
+        @media (max-width: 800px) {
+
+            .container {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .sidebar {
+
+                border-right:
+                    none;
+
+                border-bottom:
+                    1px solid #ddd;
+
+            }
+
+
+            .content {
+
+                padding:
+                    15px;
+
+            }
+
+
+            #cy {
+
+                height:
+                    520px;
+
+            }
+
+        }
+
+        .query-controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+            margin-bottom: 20px;
+        }
+
+        .query-controls select {
+            padding: 10px 12px;
+            border: 1px solid #ccd4df;
+            border-radius: 6px;
+            font-size: 14px;
+            min-width: 260px;
+        }
+
+        #query-type {
+            flex: 2;
+        }
+
+        #query-id {
+            flex: 2;
+        }
+
+        .query-button {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            background: #263b5e;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .query-button:hover {
+            background: #354f7c;
+        }
+
+        .query-results {
+            margin-top: 15px;
+        }
+
+        .query-question {
+            padding: 12px;
+            margin-bottom: 15px;
+            background: #eef3f9;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .query-result-item {
+            padding: 11px;
+            margin-bottom: 7px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            background: #fafafa;
+        }
+
+        .query-result-button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .query-result-button:hover {
+            background: #eef3f9;
+            border-color: #b8c5d6;
+        }
+
+        .query-result-button:active {
+            transform: translateY(1px);
+        }
+
+        .query-result-id {
+            font-weight: bold;
+            color: #263b5e;
+        }
+
+        .overview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .overview-header h2 {
+            margin-bottom: 5px;
+        }
+
+        .overview-header p {
+            margin-top: 0;
+            color: #666;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(150px, 1fr)
+                );
+
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            padding: 18px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: #f8fafc;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 28px;
+            font-weight: bold;
+            color: #263b5e;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .relations-title {
+            margin-top: 28px;
+        }
+
+        .relations-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(200px, 1fr)
+                );
+
+            gap: 10px;
+        }
+
+        .relation-box {
+            padding: 12px;
+            background: #f8fafc;
+            border-left: 4px solid #263b5e;
+            border-radius: 5px;
+        }
+
+        .relation-name {
+            font-weight: bold;
+            color: #263b5e;
+        }
+
+        .relation-count {
+            float: right;
+            font-weight: bold;
+        }
+    </style>
+
+
+    <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js">
+    </script>
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <h1>
+            Math Education Ontology
+        </h1>
+
+        <p>
+            Semantic exploration of the Grade 5 mathematics curriculum
+        </p>
+
+    </header>
+
+
+    <div class="container">
+
+
+        <aside class="sidebar">
+
+            <h2>
+                Lecții
+            </h2>
+
+            <div id="lesson-list">
+                Se încarcă...
+            </div>
+
+        </aside>
+
+
+
+        <main class="content">
+
+
+            <!-- ============================= -->
+            <!-- LESSON DETAILS -->
+            <!-- ============================= -->
+
+            <div id="lesson-details" class="card">
+
+                <h2>
+                    Selectează o lecție
+                </h2>
+
+                <p class="empty">
+                    Selectează o lecție pentru
+                    a vedea conceptele și
+                    competențele asociate.
+                </p>
+
+            </div>
+
+
+
+            <!-- ============================= -->
+            <!-- CONCEPT DETAILS -->
+            <!-- ============================= -->
+
+            <div id="concept-details" class="card hidden">
+            </div>
+
+            <div class="card">
+
+                <div class="overview-header">
+
+                    <div>
+                        <h2>Ontology Overview</h2>
+
+                        <p>
+                            Current statistics of the RDF/OWL knowledge graph.
+                        </p>
+                    </div>
+
+                    <button
+                        id="refresh-stats"
+                        type="button"
+                        class="graph-button"
+                    >
+                        Actualizează
+                    </button>
+
+                </div>
+
+                <div
+                    id="ontology-stats"
+                    class="stats-grid"
+                >
+
+                    <p class="empty">
+                        Se încarcă statisticile...
+                    </p>
+
+                </div>
+
+                <h3 class="relations-title">
+                    Relații semantice
+                </h3>
+
+                <div
+                    id="relation-stats"
+                    class="relations-grid"
+                >
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <h2>Semantic Queries</h2>
+
+                <p>
+                    Explorează curriculumul folosind interogări SPARQL
+                    asupra ontologiei.
+                </p>
+
+                <div class="query-controls">
+
+                    <select id="query-type">
+
+                        <option value="lesson-prior">
+                            CQ1 — Concepte necesare înainte de o lecție
+                        </option>
+
+                        <option value="lesson-competencies">
+                            CQ2 — Competențele dezvoltate de o lecție
+                        </option>
+
+                        <option value="concept-prerequisites">
+                            CQ3 — Prerechizitele unui concept
+                        </option>
+
+                        <option value="competency-lessons">
+                            CQ4 — Lecțiile care dezvoltă o competență
+                        </option>
+
+                        <option value="concept-subconcepts">
+                            CQ5 — Subconceptele unui concept
+                        </option>
+
+                    </select>
+
+
+                    <select id="query-id">
+
+                        <option value="">
+                            Selectează...
+                        </option>
+
+                    </select>
+
+
+                    <button id="run-query" type="button" class="query-button">
+                        Rulează interogarea
+                    </button>
+
+                </div>
+
+
+                <div id="query-results" class="query-results">
+
+                    <p class="empty">
+                        Selectează o interogare și introdu un ID.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- ============================= -->
+            <!-- GRAPH -->
+            <!-- ============================= -->
+
+            <div class="card">
+
+
+                <div class="graph-header">
+
+                    <h2>
+                        Graf semantic
+                    </h2>
+
+
+                    <button id="fit-graph" class="graph-button" type="button">
+                        Centrează graful
+                    </button>
+
+                </div>
+
+
+
+                <div class="legend">
+
+                    <div class="legend-item">
+                        <span class="dot lesson-dot"></span>
+                        Lecție
+                    </div>
+
+                    <div class="legend-item">
+                        <span class="dot concept-dot"></span>
+                        Concept
+                    </div>
+
+                    <div class="legend-item">
+                        <span class="dot subconcept-dot"></span>
+                        Subconcept
+                    </div>
+
+                    <div class="legend-item">
+                        <span class="dot prerequisite-dot"></span>
+                        Prerechizit
+                    </div>
+
+                    <div class="legend-item">
+                        <span class="dot" style="background:#dc2626;"></span>
+                        Cunoștință anterioară
+                    </div>
+
+                    <div class="legend-item">
+                        <span class="dot competency-dot"></span>
+                        Competență
+                    </div>
+
+                    <div class="legend-item">
+                        <span class="dot required-dot"></span>
+                        Concept cerut de competență
+                    </div>
+
+                </div>
+
+
+                <div id="cy"></div>
+
+            </div>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <script>
+
+
+        /*
+         * =====================================================
+         * GLOBAL STATE
+         * =====================================================
+         */
+
+
+        let currentLessonId =
+            null;
+
+
+        let conceptHistory =
+            [];
+
+
+        let currentCy =
+            null;
+
+
+
+        /*
+         * =====================================================
+         * GRAPH STYLE
+         * =====================================================
+         */
+
+
+        function getGraphStyle() {
+
+
+            return [
+
+
+                /*
+                 * BASE NODE
+                 */
+
+                {
+
+                    selector:
+                        "node",
+
+                    style: {
+
+                        "label":
+                            "data(label)",
+
+                        "text-wrap":
+                            "wrap",
+
+                        "text-max-width":
+                            150,
+
+                        "width":
+                            44,
+
+                        "height":
+                            44,
+
+                        "background-color":
+                            "#263b5e",
+
+                        "font-size":
+                            11,
+
+                        "color":
+                            "#1f2937",
+
+                        "text-valign":
+                            "bottom",
+
+                        "text-halign":
+                            "center",
+
+                        "text-margin-y":
+                            8,
+
+                        "border-width":
+                            2,
+
+                        "border-color":
+                            "#ffffff"
+
+                    }
+
+                },
+
+
+
+                /*
+                 * LESSON
+                 */
+
+                {
+
+                    selector:
+                        'node[type="lesson"]',
+
+                    style: {
+
+                        "background-color":
+                            "#7c3aed",
+
+                        "width":
+                            58,
+
+                        "height":
+                            58,
+
+                        "font-size":
+                            12,
+
+                        "font-weight":
+                            "bold"
+
+                    }
+
+                },
+
+
+
+                /*
+                 * CONCEPT
+                 */
+
+                {
+
+                    selector:
+                        'node[type="concept"]',
+
+                    style: {
+
+                        "background-color":
+                            "#263b5e"
+
+                    }
+
+                },
+
+
+
+                /*
+                 * SUBCONCEPT
+                 */
+
+                {
+
+                    selector:
+                        'node[type="subconcept"]',
+
+                    style: {
+
+                        "background-color":
+                            "#64748b",
+
+                        "width":
+                            36,
+
+                        "height":
+                            36
+
+                    }
+
+                },
+
+
+
+                /*
+                 * PREREQUISITE
+                 */
+
+                {
+
+                    selector:
+                        'node[type="prerequisite"]',
+
+                    style: {
+
+                        "background-color":
+                            "#d97706"
+
+                    }
+
+                },
+
+
+
+                /*
+                 * PRIOR CONCEPT
+                 */
+
+                {
+
+                    selector:
+                        'node[type="priorConcept"]',
+
+                    style: {
+
+                        "background-color":
+                            "#dc2626",
+
+                        "shape":
+                            "diamond",
+
+                        "width":
+                            42,
+
+                        "height":
+                            42
+
+                    }
+
+                },
+
+
+
+                /*
+                 * COMPETENCY
+                 */
+
+                {
+
+                    selector:
+                        'node[type="competency"]',
+
+                    style: {
+
+                        "background-color":
+                            "#059669",
+
+                        "shape":
+                            "round-rectangle",
+
+                        "width":
+                            55,
+
+                        "height":
+                            42
+
+                    }
+
+                },
+
+
+
+                /*
+                 * REQUIRED CONCEPT
+                 */
+
+                {
+
+                    selector:
+                        'node[type="requiredConcept"]',
+
+                    style: {
+
+                        "background-color":
+                            "#0891b2"
+
+                    }
+
+                },
+
+
+
+                /*
+                 * BASE EDGE
+                 */
+
+                {
+
+                    selector:
+                        "edge",
+
+                    style: {
+
+                        "curve-style":
+                            "bezier",
+
+                        "width":
+                            2,
+
+                        "target-arrow-shape":
+                            "triangle",
+
+                        "line-color":
+                            "#94a3b8",
+
+                        "target-arrow-color":
+                            "#94a3b8",
+
+                        "font-size":
+                            9,
+
+                        "color":
+                            "#475569",
+
+                        "text-background-color":
+                            "#ffffff",
+
+                        "text-background-opacity":
+                            0.9,
+
+                        "text-background-padding":
+                            2
+
+                    }
+
+                },
+
+
+
+                /*
+                 * containsConcept
+                 */
+
+                {
+
+                    selector:
+                        'edge[label="containsConcept"]',
+
+                    style: {
+
+                        "label":
+                            "",
+
+                        "line-color":
+                            "#94a3b8",
+
+                        "target-arrow-color":
+                            "#94a3b8"
+
+                    }
+
+                },
+
+
+
+                /*
+                 * narrower
+                 */
+
+                {
+
+                    selector:
+                        'edge[label="narrower"]',
+
+                    style: {
+
+                        "label":
+                            "narrower",
+
+                        "line-style":
+                            "dashed",
+
+                        "line-color":
+                            "#64748b",
+
+                        "target-arrow-color":
+                            "#64748b"
+
+                    }
+
+                },
+
+
+
+                /*
+                 * prerequisite
+                 */
+
+                {
+
+                    selector:
+                        'edge[label="hasPrerequisite"]',
+
+                    style: {
+
+                        "label":
+                            "prerequisite",
+
+                        "width":
+                            3,
+
+                        "line-color":
+                            "#d97706",
+
+                        "target-arrow-color":
+                            "#d97706"
+
+                    }
+
+                },
+
+
+
+                /*
+                 * developsCompetency
+                 */
+
+                {
+
+                    selector:
+                        'edge[label="developsCompetency"]',
+
+                    style: {
+
+                        "label":
+                            "develops",
+
+                        "width":
+                            3,
+
+                        "line-color":
+                            "#059669",
+
+                        "target-arrow-color":
+                            "#059669"
+
+                    }
+
+                },
+
+
+
+                /*
+                 * requiresConcept
+                 */
+
+                {
+
+                    selector:
+                        'edge[label="requiresConcept"]',
+
+                    style: {
+
+                        "label":
+                            "requires",
+
+                        "width":
+                            3,
+
+                        "line-style":
+                            "dashed",
+
+                        "line-color":
+                            "#0891b2",
+
+                        "target-arrow-color":
+                            "#0891b2"
+
+                    }
+
+                },
+
+
+
+                /*
+                 * requiresPriorConcept
+                 */
+
+                {
+
+                    selector:
+                        'edge[label="requiresPriorConcept"]',
+
+                    style: {
+
+                        "label":
+                            "prior knowledge",
+
+                        "width":
+                            3,
+
+                        "line-style":
+                            "dotted",
+
+                        "line-color":
+                            "#dc2626",
+
+                        "target-arrow-color":
+                            "#dc2626"
+
+                    }
+
+                },
+
+
+
+                /*
+                 * SELECTED
+                 */
+
+                {
+
+                    selector:
+                        "node:selected",
+
+                    style: {
+
+                        "border-width":
+                            4,
+
+                        "border-color":
+                            "#111827"
+
+                    }
+
+                }
+
+            ];
+
+        }
+
+
+
+        /*
+         * =====================================================
+         * LOAD LESSON LIST
+         * =====================================================
+         */
+        /*
+         * =====================================================
+         * SEMANTIC QUERIES
+         * =====================================================
+         */
+
+        const queryType =
+            document.getElementById(
+                "query-type"
+            );
+
+        const queryId =
+            document.getElementById(
+                "query-id"
+            );
+
+        const runQueryButton =
+            document.getElementById(
+                "run-query"
+            );
+
+        const queryResults =
+            document.getElementById(
+                "query-results"
+            );
+
+        const semanticQueries = {
+
+            "lesson-prior": {
+
+                endpoint: id =>
+                    `/api/queries/lesson-prior/${id}`,
+
+                source:
+                    "/lessons",
+
+                entityName:
+                    "lecția",
+
+                resultType:
+                    "concept"
+
+            },
+
+            "lesson-competencies": {
+
+                endpoint: id =>
+                    `/api/queries/lesson-competencies/${id}`,
+
+                source:
+                    "/lessons",
+
+                entityName:
+                    "lecția",
+
+                resultType:
+                    "competency"
+
+            },
+
+            "concept-prerequisites": {
+
+                endpoint: id =>
+                    `/api/queries/concept-prerequisites/${id}`,
+
+                source:
+                    "/concepts",
+
+                entityName:
+                    "conceptul",
+
+                resultType:
+                    "concept"
+
+            },
+
+            "competency-lessons": {
+
+                endpoint: id =>
+                    `/api/queries/competency-lessons/${id}`,
+
+                source:
+                    "/competencies",
+
+                entityName:
+                    "competența",
+
+                resultType:
+                    "lesson"
+
+            },
+
+            "concept-subconcepts": {
+
+                endpoint: id =>
+                    `/api/queries/concept-subconcepts/${id}`,
+
+                source:
+                    "/concepts",
+
+                entityName:
+                    "conceptul",
+
+                resultType:
+                    "concept"
+
+            }
+
+        };
+
+        async function loadQueryOptions() {
+
+            const config =
+                semanticQueries[
+                    queryType.value
+                ];
+
+            queryId.innerHTML = `
+
+        <option value="">
+            Se încarcă...
+        </option>
+
+    `;
+
+            try {
+
+                const response =
+                    await fetch(
+                        config.source
+                    );
+
+                const items =
+                    await response.json();
+
+                queryId.innerHTML = `
+
+            <option value="">
+                Selectează ${config.entityName}...
+            </option>
+
+        `;
+
+                items.forEach(
+                    item => {
+
+                        const option =
+                            document.createElement(
+                                "option"
+                            );
+
+                        option.value =
+                            item.id;
+
+                        option.textContent =
+                            `${item.id} — ${item.label}`;
+
+                        queryId.appendChild(
+                            option
+                        );
+
+                    }
+                );
+
+            }
+            catch (error) {
+
+                queryId.innerHTML = `
+
+            <option value="">
+                Eroare la încărcare
+            </option>
+
+        `;
+
+                console.error(
+                    error
+                );
+
+            }
+
+        }
+
+        function selectLessonFromQuery(
+            lessonId
+        ) {
+
+            document
+                .querySelectorAll(
+                    ".lesson"
+                )
+                .forEach(
+                    button => {
+
+                        button.classList.remove(
+                            "active"
+                        );
+
+                        if (
+                            button.dataset.lessonId
+                            === lessonId
+                        ) {
+
+                            button.classList.add(
+                                "active"
+                            );
+
+                        }
+
+                    }
+                );
+
+            currentLessonId =
+                lessonId;
+
+            conceptHistory =
+                [];
+
+            document
+                .getElementById(
+                    "concept-details"
+                )
+                .classList.add(
+                    "hidden"
+                );
+
+            loadLessonDetails(
+                lessonId
+            );
+
+            document
+                .getElementById(
+                    "lesson-details"
+                )
+                .scrollIntoView({
+                    behavior:
+                        "smooth",
+
+                    block:
+                        "start"
+                });
+
+        }
+
+        async function selectCompetencyFromQuery(
+            competencyId
+        ) {
+
+            queryType.value =
+                "competency-lessons";
+
+            await loadQueryOptions();
+
+            queryId.value =
+                competencyId;
+
+            await runSemanticQuery();
+
+            document
+                .getElementById(
+                    "query-results"
+                )
+                .scrollIntoView({
+                    behavior:
+                        "smooth",
+
+                    block:
+                        "nearest"
+                });
+
+        }
+
+        async function handleQueryResultClick(
+            resultType,
+            resultId
+        ) {
+
+            if (
+                resultType ===
+                "concept"
+            ) {
+
+                openConcept(
+                    resultId
+                );
+
+                setTimeout(
+                    () => {
+
+                        document
+                            .getElementById(
+                                "concept-details"
+                            )
+                            .scrollIntoView({
+                                behavior:
+                                    "smooth",
+
+                                block:
+                                    "start"
+                            });
+
+                    },
+                    100
+                );
+
+                return;
+
+            }
+
+            if (
+                resultType ===
+                "lesson"
+            ) {
+
+                selectLessonFromQuery(
+                    resultId
+                );
+
+                return;
+
+            }
+
+            if (
+                resultType ===
+                "competency"
+            ) {
+
+                await selectCompetencyFromQuery(
+                    resultId
+                );
+
+            }
+
+        }
+
+        queryType.addEventListener(
+            "change",
+            () => {
+
+                queryResults.innerHTML = `
+
+            <p class="empty">
+                Selectează o valoare și rulează interogarea.
+            </p>
+
+        `;
+
+                loadQueryOptions();
+
+            }
+        );
+
+        async function runSemanticQuery() {
+
+            const selectedType =
+                queryType.value;
+
+            const id =
+                queryId.value;
+
+            if (!id) {
+
+                queryResults.innerHTML = `
+
+            <p class="empty">
+                Selectează mai întâi o valoare.
+            </p>
+
+        `;
+
+                return;
+
+            }
+
+            const config =
+                semanticQueries[
+                    selectedType
+                ];
+
+            queryResults.innerHTML = `
+
+        <p class="empty">
+            Se execută interogarea SPARQL...
+        </p>
+
+    `;
+
+            try {
+
+                const response =
+                    await fetch(
+                        config.endpoint(id)
+                    );
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Interogarea nu a putut fi executată."
+                    );
+
+                }
+
+                const data =
+                    await response.json();
+
+                let resultsHtml =
+                    "";
+
+                data.results.forEach(
+                    item => {
+
+                        resultsHtml += `
+
+                    <button
+                        type="button"
+                        class="
+                            query-result-item
+                            query-result-button
+                        "
+                        data-result-id="${item.id}"
+                        data-result-type="${config.resultType}"
+                    >
+
+                        <span class="query-result-id">
+                            ${item.id}
+                        </span>
+
+                        —
+
+                        ${item.label}
+
+                    </button>
+
+                `;
+
+                    }
+                );
+
+                queryResults.innerHTML = `
+
+            <div class="query-question">
+                ${data.question}
+            </div>
+
+            ${
+                resultsHtml
+                ||
+                `
+                    <p class="empty">
+                        Interogarea nu a returnat rezultate.
+                    </p>
+                `
+            }
+
+        `;
+
+                queryResults
+                    .querySelectorAll(
+                        ".query-result-button"
+                    )
+                    .forEach(
+                        button => {
+
+                            button.addEventListener(
+                                "click",
+                                async () => {
+
+                                    await handleQueryResultClick(
+
+                                        button.dataset.resultType,
+
+                                        button.dataset.resultId
+
+                                    );
+
+                                }
+                            );
+
+                        }
+                    );
+
+            }
+            catch (error) {
+
+                queryResults.innerHTML = `
+
+            <p class="empty">
+                A apărut o eroare la executarea interogării.
+            </p>
+
+        `;
+
+                console.error(
+                    error
+                );
+
+            }
+
+        }
+
+        runQueryButton.addEventListener(
+            "click",
+            runSemanticQuery
+        );
+
+        async function loadLessons() {
+
+
+            const response =
+                await fetch(
+                    "/lessons"
+                );
+
+
+            const lessons =
+                await response.json();
+
+
+            const container =
+                document.getElementById(
+                    "lesson-list"
+                );
+
+
+            container.innerHTML =
+                "";
+
+
+            lessons.forEach(
+                lesson => {
+
+
+                    const button =
+                        document.createElement(
+                            "button"
+                        );
+
+
+                    button.className =
+                        "lesson";
+
+                    button.dataset.lessonId =
+                        lesson.id;
+
+
+                    button.textContent =
+                        lesson.label;
+
+
+
+                    button.addEventListener(
+                        "click",
+                        () => {
+
+
+                            document
+                                .querySelectorAll(
+                                    ".lesson"
+                                )
+                                .forEach(
+                                    item =>
+                                        item.classList.remove(
+                                            "active"
+                                        )
+                                );
+
+
+                            button.classList.add(
+                                "active"
+                            );
+
+
+                            currentLessonId =
+                                lesson.id;
+
+
+                            conceptHistory =
+                                [];
+
+
+                            document
+                                .getElementById(
+                                    "concept-details"
+                                )
+                                .classList.add(
+                                    "hidden"
+                                );
+
+
+                            loadLessonDetails(
+                                lesson.id
+                            );
+
+                        }
+                    );
+
+
+                    container.appendChild(
+                        button
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /*
+         * =====================================================
+         * LOAD LESSON
+         * =====================================================
+         */
+
+
+        async function loadLessonDetails(
+            lessonId
+        ) {
+
+
+            currentLessonId =
+                lessonId;
+
+
+            const response =
+                await fetch(
+                    `/lessons/${lessonId}`
+                );
+
+
+            const lesson =
+                await response.json();
+
+
+            const container =
+                document.getElementById(
+                    "lesson-details"
+                );
+
+
+            let conceptsHtml =
+                "";
+
+
+            lesson.concepts.forEach(
+                concept => {
+
+
+                    conceptsHtml += `
+
+                    <button
+                        type="button"
+                        class="concept concept-button"
+                        data-concept-id="${concept.id}"
+                    >
+
+                        <div class="concept-id">
+                            ${concept.id}
+                        </div>
+
+                        <strong>
+                            ${concept.label}
+                        </strong>
+
+                    </button>
+
+                `;
+
+                }
+            );
+
+
+
+            let priorConceptsHtml =
+                "";
+
+
+            (lesson.prior_concepts || []).forEach(
+                concept => {
+
+
+                    priorConceptsHtml += `
+
+                    <button
+                        type="button"
+                        class="related-concept prior-concept-button"
+                        data-concept-id="${concept.id}"
+                    >
+
+                        <strong>
+                            ${concept.id}
+                        </strong>
+
+                        — ${concept.label}
+
+                    </button>
+
+                `;
+
+                }
+            );
+
+
+
+            let competenciesHtml =
+                "";
+
+
+            lesson.competencies.forEach(
+                competency => {
+
+
+                    competenciesHtml += `
+
+                    <div class="competency">
+
+                        <strong>
+                            ${competency.id}
+                        </strong>
+
+                        <br>
+
+                        ${competency.label}
+
+                    </div>
+
+                `;
+
+                }
+            );
+
+
+
+            container.innerHTML = `
+
+            <h2>
+                ${lesson.label}
+            </h2>
+
+
+            <p>
+                ${lesson.definition
+                ||
+                "Fără definiție."
+                }
+            </p>
+
+
+            ${lesson.scope_note
+                    ?
+                    `
+                    <p>
+
+                        <strong>
+                            Scope:
+                        </strong>
+
+                        ${lesson.scope_note}
+
+                    </p>
+                `
+                    :
+                    ""
+                }
+
+
+            <h3>
+                Concepte matematice
+            </h3>
+
+
+            ${conceptsHtml
+                ||
+                '<p class="empty">Nu există concepte încă.</p>'
+                }
+
+
+            <h3>
+                Cunoștințe anterioare necesare
+            </h3>
+
+
+            ${priorConceptsHtml
+                ||
+                '<p class="empty">Nu există cunoștințe anterioare definite.</p>'
+                }
+
+
+            <h3>
+                Competențe dezvoltate
+            </h3>
+
+
+            ${competenciesHtml
+                ||
+                '<p class="empty">Nu există competențe asociate.</p>'
+                }
+
+        `;
+
+
+
+            /*
+             * CLICK PE CONCEPTE
+             */
+
+
+            container
+                .querySelectorAll(
+                    ".concept-button"
+                )
+                .forEach(
+                    button => {
+
+
+                        button.addEventListener(
+                            "click",
+                            () => {
+
+
+                                openConcept(
+                                    button.dataset.conceptId
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+
+
+            /*
+             * CLICK PE CUNOȘTINȚELE ANTERIOARE
+             */
+
+
+            container
+                .querySelectorAll(
+                    ".prior-concept-button"
+                )
+                .forEach(
+                    button => {
+
+
+                        button.addEventListener(
+                            "click",
+                            () => {
+
+
+                                openConcept(
+                                    button.dataset.conceptId
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+
+
+            /*
+             * GRAPH
+             */
+
+
+            drawLessonGraph(
+                lessonId
+            );
+
+        }
+
+
+
+        /*
+         * =====================================================
+         * OPEN CONCEPT
+         * =====================================================
+         */
+
+
+        function openConcept(
+            conceptId
+        ) {
+
+
+            if (
+                conceptHistory.length === 0
+                ||
+                conceptHistory[
+                conceptHistory.length - 1
+                ] !== conceptId
+            ) {
+
+
+                conceptHistory.push(
+                    conceptId
+                );
+
+            }
+
+
+            loadConceptDetails(
+                conceptId
+            );
+
+        }
+
+
+
+        /*
+         * =====================================================
+         * BACK BUTTON
+         * =====================================================
+         */
+
+
+        function goBack() {
+
+
+            /*
+             * Eliminăm conceptul curent.
+             */
+
+
+            if (
+                conceptHistory.length > 0
+            ) {
+
+                conceptHistory.pop();
+
+            }
+
+
+
+            /*
+             * Revenim la conceptul anterior.
+             */
+
+
+            if (
+                conceptHistory.length > 0
+            ) {
+
+
+                const previous =
+                    conceptHistory[
+                    conceptHistory.length - 1
+                    ];
+
+
+                loadConceptDetails(
+                    previous
+                );
+
+
+                return;
+
+            }
+
+
+
+            /*
+             * Revenim la lecție.
+             */
+
+
+            document
+                .getElementById(
+                    "concept-details"
+                )
+                .classList.add(
+                    "hidden"
+                );
+
+
+            if (
+                currentLessonId
+            ) {
+
+
+                drawLessonGraph(
+                    currentLessonId
+                );
+
+            }
+
+        }
+
+
+
+        /*
+         * =====================================================
+         * CONCEPT DETAILS
+         * =====================================================
+         */
+
+
+        async function loadConceptDetails(
+            conceptId
+        ) {
+
+
+            const response =
+                await fetch(
+                    `/concepts/${conceptId}`
+                );
+
+
+            const concept =
+                await response.json();
+
+
+            const container =
+                document.getElementById(
+                    "concept-details"
+                );
+
+
+
+            let broaderHtml =
+                "";
+
+
+            concept.broader.forEach(
+                item => {
+
+
+                    broaderHtml += `
+
+                    <button
+                        type="button"
+                        class="related-concept"
+                        data-concept-id="${item.id}"
+                    >
+
+                        <strong>
+                            ${item.id}
+                        </strong>
+
+                        — ${item.label}
+
+                    </button>
+
+                `;
+
+                }
+            );
+
+
+
+            let narrowerHtml =
+                "";
+
+
+            concept.narrower.forEach(
+                item => {
+
+
+                    narrowerHtml += `
+
+                    <button
+                        type="button"
+                        class="related-concept"
+                        data-concept-id="${item.id}"
+                    >
+
+                        <strong>
+                            ${item.id}
+                        </strong>
+
+                        — ${item.label}
+
+                    </button>
+
+                `;
+
+                }
+            );
+
+
+
+            let prerequisitesHtml =
+                "";
+
+
+            concept.prerequisites.forEach(
+                item => {
+
+
+                    prerequisitesHtml += `
+
+                    <button
+                        type="button"
+                        class="related-concept"
+                        data-concept-id="${item.id}"
+                    >
+
+                        <strong>
+                            ${item.id}
+                        </strong>
+
+                        — ${item.label}
+
+                    </button>
+
+                `;
+
+                }
+            );
+
+
+
+            /*
+             * BUTONUL BACK ESTE AICI,
+             * ÎN INTERIORUL CARDULUI.
+             */
+
+
+            container.innerHTML = `
+
+
+            <div class="concept-toolbar">
+
+                <button
+                    id="back-button"
+                    type="button"
+                    class="back-button"
+                >
+                    ← Înapoi
+                </button>
+
+            </div>
+
+
+
+            <h2>
+                ${concept.label}
+            </h2>
+
+
+            <div class="concept-id">
+                ${concept.id}
+            </div>
+
+
+            <p>
+                ${concept.definition
+                ||
+                "Fără definiție."
+                }
+            </p>
+
+
+
+            <h3>
+                Concept mai general
+            </h3>
+
+
+            ${broaderHtml
+                ||
+                '<p class="empty">Nu există concept broader.</p>'
+                }
+
+
+
+            <h3>
+                Subconcepte
+            </h3>
+
+
+            ${narrowerHtml
+                ||
+                '<p class="empty">Nu există subconcepte.</p>'
+                }
+
+
+
+            <h3>
+                Prerechizite
+            </h3>
+
+
+            ${prerequisitesHtml
+                ||
+                '<p class="empty">Nu există prerechizite.</p>'
+                }
+
+        `;
+
+
+
+            /*
+             * IMPORTANT:
+             * întâi facem cardul vizibil.
+             */
+
+
+            container.classList.remove(
+                "hidden"
+            );
+
+
+
+            /*
+             * BACK LISTENER
+             */
+
+
+            const backButton =
+                document.getElementById(
+                    "back-button"
+                );
+
+
+            if (
+                backButton
+            ) {
+
+
+                backButton.addEventListener(
+                    "click",
+                    goBack
+                );
+
+            }
+
+
+
+            /*
+             * RELATED CONCEPT LISTENERS
+             */
+
+
+            container
+                .querySelectorAll(
+                    ".related-concept"
+                )
+                .forEach(
+                    button => {
+
+
+                        button.addEventListener(
+                            "click",
+                            () => {
+
+
+                                openConcept(
+                                    button.dataset.conceptId
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+
+
+            drawConceptGraph(
+                concept
+            );
+
+        }
+
+
+
+        /*
+         * =====================================================
+         * CONCEPT GRAPH
+         * =====================================================
+         */
+
+
+        function drawConceptGraph(
+            concept
+        ) {
+
+
+            const elements =
+                [];
+
+
+
+            elements.push({
+
+                data: {
+
+                    id:
+                        concept.id,
+
+                    label:
+                        concept.label,
+
+                    type:
+                        "concept"
+
+                }
+
+            });
+
+
+
+            /*
+             * BROADER
+             */
+
+
+            concept.broader.forEach(
+                item => {
+
+
+                    elements.push({
+
+                        data: {
+
+                            id:
+                                item.id,
+
+                            label:
+                                item.label,
+
+                            type:
+                                "concept"
+
+                        }
+
+                    });
+
+
+                    elements.push({
+
+                        data: {
+
+                            id:
+                                `broader-${item.id}-${concept.id}`,
+
+                            source:
+                                item.id,
+
+                            target:
+                                concept.id,
+
+                            label:
+                                "narrower"
+
+                        }
+
+                    });
+
+                }
+            );
+
+
+
+            /*
+             * NARROWER
+             */
+
+
+            concept.narrower.forEach(
+                item => {
+
+
+                    elements.push({
+
+                        data: {
+
+                            id:
+                                item.id,
+
+                            label:
+                                item.label,
+
+                            type:
+                                "subconcept"
+
+                        }
+
+                    });
+
+
+                    elements.push({
+
+                        data: {
+
+                            id:
+                                `${concept.id}-${item.id}`,
+
+                            source:
+                                concept.id,
+
+                            target:
+                                item.id,
+
+                            label:
+                                "narrower"
+
+                        }
+
+                    });
+
+                }
+            );
+
+
+
+            /*
+             * PREREQUISITES
+             */
+
+
+            concept.prerequisites.forEach(
+                item => {
+
+
+                    elements.push({
+
+                        data: {
+
+                            id:
+                                item.id,
+
+                            label:
+                                item.label,
+
+                            type:
+                                "prerequisite"
+
+                        }
+
+                    });
+
+
+                    elements.push({
+
+                        data: {
+
+                            id:
+                                `${concept.id}-prereq-${item.id}`,
+
+                            source:
+                                concept.id,
+
+                            target:
+                                item.id,
+
+                            label:
+                                "hasPrerequisite"
+
+                        }
+
+                    });
+
+                }
+            );
+
+
+
+            currentCy =
+                cytoscape({
+
+                    container:
+                        document.getElementById(
+                            "cy"
+                        ),
+
+                    elements:
+                        elements,
+
+                    style:
+                        getGraphStyle(),
+
+                    layout: {
+
+                        name:
+                            "breadthfirst",
+
+                        directed:
+                            true,
+
+                        padding:
+                            80,
+
+                        spacingFactor:
+                            2
+
+                    }
+
+                });
+
+
+
+            currentCy.on(
+
+                "tap",
+
+                "node",
+
+                function (
+                    event
+                ) {
+
+
+                    const node =
+                        event.target;
+
+
+                    const id =
+                        node.id();
+
+
+                    if (
+                        id !== concept.id
+                    ) {
+
+
+                        openConcept(
+                            id
+                        );
+
+                    }
+
+                }
+
+            );
+
+
+
+            currentCy.fit(
+                currentCy.elements(),
+                70
+            );
+
+        }
+
+
+
+        /*
+         * =====================================================
+         * LESSON GRAPH
+         * =====================================================
+         */
+
+
+        async function drawLessonGraph(
+            lessonId
+        ) {
+
+
+            const response =
+                await fetch(
+                    `/lessons/${lessonId}/graph`
+                );
+
+
+            const data =
+                await response.json();
+
+
+            const elements =
+                [];
+
+
+
+            data.nodes.forEach(
+                node => {
+
+
+                    elements.push({
+
+                        data: {
+
+                            id:
+                                node.id,
+
+                            label:
+                                node.label,
+
+                            type:
+                                node.type
+
+                        }
+
+                    });
+
+                }
+            );
+
+
+
+            data.edges.forEach(
+                (
+                    edge,
+                    index
+                ) => {
+
+
+                    elements.push({
+
+                        data: {
+
+                            id:
+                                `edge-${index}`,
+
+                            source:
+                                edge.source,
+
+                            target:
+                                edge.target,
+
+                            label:
+                                edge.label
+
+                        }
+
+                    });
+
+                }
+            );
+
+
+
+            currentCy =
+                cytoscape({
+
+                    container:
+                        document.getElementById(
+                            "cy"
+                        ),
+
+                    elements:
+                        elements,
+
+                    style:
+                        getGraphStyle(),
+
+
+                    layout: {
+
+                        name:
+                            "cose",
+
+                        animate:
+                            false,
+
+                        padding:
+                            80,
+
+                        idealEdgeLength:
+                            150,
+
+                        nodeRepulsion:
+                            10000,
+
+                        edgeElasticity:
+                            100,
+
+                        gravity:
+                            0.25,
+
+                        numIter:
+                            1200,
+
+                        randomize:
+                            true
+
+                    }
+
+                });
+
+
+
+            /*
+             * CLICK PE NODURI
+             */
+
+
+            currentCy.on(
+
+                "tap",
+
+                "node",
+
+                function (
+                    event
+                ) {
+
+
+                    const node =
+                        event.target;
+
+
+                    const nodeType =
+                        node.data(
+                            "type"
+                        );
+
+
+                    /*
+                     * Deocamdată doar conceptele
+                     * sunt deschise ca detalii.
+                     */
+
+
+                    if (
+                        nodeType === "concept"
+                        ||
+                        nodeType === "subconcept"
+                        ||
+                        nodeType === "prerequisite"
+                        ||
+                        nodeType === "priorConcept"
+                        ||
+                        nodeType === "requiredConcept"
+                    ) {
+
+
+                        openConcept(
+                            node.id()
+                        );
+
+                    }
+
+                }
+
+            );
+
+
+
+            currentCy.fit(
+                currentCy.elements(),
+                60
+            );
+
+        }
+
+
+
+        /*
+         * =====================================================
+         * CENTER GRAPH
+         * =====================================================
+         */
+
+
+        document
+            .getElementById(
+                "fit-graph"
+            )
+            .addEventListener(
+
+                "click",
+
+                () => {
+
+
+                    if (
+                        currentCy
+                    ) {
+
+
+                        currentCy.fit(
+                            currentCy.elements(),
+                            60
+                        );
+
+                    }
+
+                }
+
+            );
+
+        /*
+         * =====================================================
+         * ONTOLOGY STATISTICS
+         * =====================================================
+         */
+
+        async function loadOntologyStats() {
+
+            const statsContainer =
+                document.getElementById(
+                    "ontology-stats"
+                );
+
+            const relationsContainer =
+                document.getElementById(
+                    "relation-stats"
+                );
+
+            statsContainer.innerHTML = `
+
+                <p class="empty">
+                    Se încarcă statisticile...
+                </p>
+
+            `;
+
+            try {
+
+                const response =
+                    await fetch(
+                        "/api/stats"
+                    );
+
+                const data =
+                    await response.json();
+
+                /*
+                 * STATISTICI PRINCIPALE
+                 */
+
+                statsContainer.innerHTML = `
+
+                    <div class="stat-box">
+
+                        <span class="stat-number">
+                            ${data.triples}
+                        </span>
+
+                        <span class="stat-label">
+                            RDF triples
+                        </span>
+
+                    </div>
+
+                    <div class="stat-box">
+
+                        <span class="stat-number">
+                            ${data.lessons}
+                        </span>
+
+                        <span class="stat-label">
+                            Lecții
+                        </span>
+
+                    </div>
+
+                    <div class="stat-box">
+
+                        <span class="stat-number">
+                            ${data.concepts}
+                        </span>
+
+                        <span class="stat-label">
+                            Concepte matematice
+                        </span>
+
+                    </div>
+
+                    <div class="stat-box">
+
+                        <span class="stat-number">
+                            ${data.competencies_total}
+                        </span>
+
+                        <span class="stat-label">
+                            Competențe
+                        </span>
+
+                    </div>
+
+                    <div class="stat-box">
+
+                        <span class="stat-number">
+                            ${data.specific_competencies}
+                        </span>
+
+                        <span class="stat-label">
+                            Competențe specifice
+                        </span>
+
+                    </div>
+
+                    <div class="stat-box">
+
+                        <span class="stat-number">
+                            ${data.general_competencies}
+                        </span>
+
+                        <span class="stat-label">
+                            Competențe generale
+                        </span>
+
+                    </div>
+
+                `;
+
+                /*
+                 * RELAȚII
+                 */
+
+                const relationLabels = {
+
+                    containsConcept:
+                        "containsConcept",
+
+                    developsCompetency:
+                        "developsCompetency",
+
+                    requiresPriorConcept:
+                        "requiresPriorConcept",
+
+                    hasPrerequisite:
+                        "hasPrerequisite",
+
+                    skosBroader:
+                        "skos:broader",
+
+                    requiresConcept:
+                        "requiresConcept"
+
+                };
+
+                let relationsHtml =
+                    "";
+
+                Object.entries(
+                    data.relations
+                ).forEach(
+                    ([key, value]) => {
+
+                        relationsHtml += `
+
+                            <div class="relation-box">
+
+                                <span class="relation-name">
+                                    ${relationLabels[key]}
+                                </span>
+
+                                <span class="relation-count">
+                                    ${value}
+                                </span>
+
+                            </div>
+
+                        `;
+
+                    }
+                );
+
+                relationsContainer.innerHTML =
+                    relationsHtml;
+
+            }
+            catch (error) {
+
+                statsContainer.innerHTML = `
+
+                    <p class="empty">
+                        Statisticile nu au putut fi încărcate.
+                    </p>
+
+                `;
+
+                console.error(
+                    error
+                );
+
+            }
+
+        }
+
+        /*
+         * REFRESH
+         */
+
+        document
+            .getElementById(
+                "refresh-stats"
+            )
+            .addEventListener(
+                "click",
+                loadOntologyStats
+            );
+
+
+
+        /*
+         * =====================================================
+         * START
+         * =====================================================
+         */
+
+
+        loadQueryOptions();
+        loadOntologyStats();
+        loadLessons();
+
+
+    </script>
+
+
+</body>
+
+</html>
